@@ -46,7 +46,7 @@ public class ClientController {
 	 }
 	 
 	 @RequestMapping(value = "/clients/{id}", method = RequestMethod.DELETE)
-	 public void deleteStudent(@PathVariable Integer id) {
+	 public void deleteUser(@PathVariable Integer id) {
 		 clientService.deleteUser(id);
 		 	 
 	 }
