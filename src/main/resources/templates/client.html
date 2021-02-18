@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>WHREY</title>
+</head>
+<body>
+
+<ul>
+    <li th:each="c : ${client}">
+        <span th:text="${client.name}">Default</span>
+    </li>
+</ul>
+
+</body>
+</html>
