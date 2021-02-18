@@ -8,9 +8,9 @@
 
 <ul>
     <li th:each="post : ${posts}">
-        <span th:text="${posts.date}">Default</span>
-        <span th:text="${posts.user}">Default</span>
-        <span th:text="${posts.details}">Default</span>
+        <span th:text="${post.date}">Default</span>
+        <span th:text="${post.user.name}">Default</span>
+        <span th:text="${post.details}">Default</span>
     </li>
 </ul>
 
