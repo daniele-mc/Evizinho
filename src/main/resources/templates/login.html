@@ -8,16 +8,16 @@
 <body>
 <div class="limiter">
     <div class="container">
-        <form>
+        <form th:action="@{/login}" th:object="${client}" method="post">
             <h1>Login</h1>
             <p>
-                <input placeholder="Email" type="email" />
+                <input th:value="${client.email}" id="email" name="email" placeholder="Email" type="text" />
             </p>
             <p>
-                <input placeholder="Senha" type="password" />
+                <input th:value="${client.password}" id="password" name="password" placeholder="Senha" type="password" />
             </p>
             <p>
-                <a class="login" href="/home">Entrar</a>
+                <button class="login" type="submit">Entrar</button>
             </p>
             <p>
                 <a class="register" href="/clients">Criar uma conta</a>
