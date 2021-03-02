@@ -16,6 +16,18 @@ public class Client {
 	@Column(nullable = false)
 	private String name;
 
+	@Column(nullable = false)
+	private String email;
+
+	@Column(nullable = false)
+	private String password;
+
+	@Column(nullable = false)
+	private String apartment;
+
+	@Column(nullable = false)
+	private String phone;
+
 	public Integer getId() {
 		return id;
 	}
@@ -32,9 +44,39 @@ public class Client {
 		this.name = name;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getApartment() {
+		return apartment;
+	}
+
+	public void setApartment(String apartment) {
+		this.apartment = apartment;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	public Client() {
 		//Empty
 	}
-	
-	
 }
