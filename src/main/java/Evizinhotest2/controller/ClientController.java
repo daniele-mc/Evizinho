@@ -6,11 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import Evizinhotest2.model.Client;
 import Evizinhotest2.service.ClientService;
@@ -27,14 +23,12 @@ public class ClientController {
 		 model.addAttribute("clients", clients);
 		 return clients;
 	  }	
-	 
-	 
+
 	 @RequestMapping(value = "/clients/{id}")
 	 public Optional<Client> getUser(@PathVariable Integer id) {
 	 	return clientService.getUser(id);
 	 }
-	 
-	 
+
 	 @RequestMapping(value = "/clients", method = RequestMethod.POST)
 	 public void addUser(@RequestBody Client user) {
 		 clientService.addUser(user);
@@ -50,5 +44,6 @@ public class ClientController {
 		 clientService.deleteUser(id);
 		 	 
 	 }
+
 
 }

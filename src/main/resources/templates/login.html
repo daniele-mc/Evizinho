@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link th:href="@{/login.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="limiter">
+    <div class="container">
+        <form th:action="@{/login}" th:object="${client}" method="post">
+            <h1>Login</h1>
+            <p>
+                <input th:value="${client.email}" id="email" name="email" placeholder="Email" type="text" />
+            </p>
+            <p>
+                <input th:value="${client.password}" id="password" name="password" placeholder="Senha" type="password" />
+            </p>
+            <p>
+                <button class="login" type="submit">Entrar</button>
+            </p>
+            <p>
+                <a class="register" href="/clients">Criar uma conta</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

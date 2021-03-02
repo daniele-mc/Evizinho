@@ -40,4 +40,5 @@ public class ClientService {
 	public void deleteUser(Integer id) {
 	     clientRepository.deleteById(id);
 	}
+
 }
