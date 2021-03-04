@@ -1,6 +1,6 @@
 package Evizinhotest2.service;
 
-import Evizinhotest2.model.Client;
+import Evizinhotest2.model.User;
 import Evizinhotest2.repository.LoginRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class LoginService {
     @Autowired
     public LoginRepository loginRepository;
 
-    public Optional<Client> getUserEmail(String email) {
-        return loginRepository.findClientByEmail(email);
+    public Optional<User> getUserEmail(String email) {
+        return loginRepository.findUserByEmail(email);
     }
 }

@@ -18,7 +18,7 @@ public class Post {
 	private String date;
 	
 	@ManyToOne 
-	private Client user;
+	private User user;
 	
 	@Column
 	private String details;
@@ -35,10 +35,10 @@ public class Post {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public Client getUser() {
+	public User getUser() {
 		return user;
 	}
-	public void setUser(Client user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 	public String getDetails() {

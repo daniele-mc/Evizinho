@@ -29,7 +29,7 @@ public class PostService {
 	     postRepository.save(post);
 	}
 	
-	public Optional<Post> getUser(Integer id) {
+	public Optional<Post> getPost(Integer id) {
 	     return postRepository.findById(id);
 	}
 	
@@ -41,7 +41,7 @@ public class PostService {
 	     postRepository.deleteById(id);
 	}
 	
-	public List<Post> getPostsByUser(String id) {
+	public List<Post> getPostsByUser(Integer id) {
 		List<Post> posts = new ArrayList<>();
 		   
 		postRepository.findByUserId(id)

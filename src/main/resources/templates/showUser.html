@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>Perfil de usuário</title>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<h1>Perfil de Usuário</h1>
+			<hr />
+			<div class="form-group"> 
+				<label for="name">Name: </label>  
+				<span th:text="${user.name}"></span> 
+			</div> 
+			<div class="form-group"> 
+				<label for="email">Email: </label>  
+				<span th:text="${user.email}"></span> 
+			</div>
+			<div class="form-group"> 
+				<label for="email">Apartamento: </label>  
+				<span th:text="${user.apartment}"></span> 
+			</div>
+			<div class="form-group"> 
+				<label for="email">Telefone: </label>  
+				<span th:text="${user.phone}"></span> 
+			</div>  
+			
+		</div>
+	</body>
+</html>

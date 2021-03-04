@@ -1,6 +1,6 @@
 package Evizinhotest2.controller;
 
-import Evizinhotest2.model.Client;
+import Evizinhotest2.model.User;
 import Evizinhotest2.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,15 +15,15 @@ public class LoginController {
     private LoginService loginService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(Client client, Model model) {
-        model.addAttribute("client", client);
+    public String login(User user, Model model) {
+        model.addAttribute("user", user);
         return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String loginPost(Client client, Model model) {
-        model.addAttribute("client", client);
-        if (loginService.getUserEmail(client.getEmail()).isEmpty()) {
+    public String loginPost(User user, Model model) {
+        model.addAttribute("user", user);
+        if (loginService.getUserEmail(user.getEmail()).isEmpty()) {
             return "login";
         }
         else {
