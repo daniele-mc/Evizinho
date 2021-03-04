@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<body>
+<div class="limiter">
+    <div class="container">
+        <form th:action="@{/users/register}" action="#" th:object="${user}" method="post">
+            <h1>Cadastro</h1>
+            <p>
+                <input th:field="*{name}" id="name" name="name" placeholder="Nome" type="text" />
+            </p>
+            <p>
+                <input th:field="*{phone}" id="phone" name="phone" placeholder="Telefone" type="text" />
+            </p>
+            <p>
+                <input th:field="*{apartment}" id="apartment" name="apartment" placeholder="Apartamento" type="text" />
+            </p>
+            <p>
+                <input th:field="*{email}" id="email" name="email" placeholder="Email" type="text" />
+            </p>
+            <p>
+                <input th:field="*{password}" id="password" name="password" placeholder="Senha" type="password" />
+            </p>
+            <p>
+                <button class="register" type="submit">Entrar</button>
+            </p>
+            <p>
+                <a class="login" href="/login">Voltar</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
