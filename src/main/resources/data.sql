@@ -3,4 +3,5 @@ insert into User (id, name, email, password, apartment, phone) values(1245, 'Cle
 COMMIT;
 
 insert into Post values(400, '18/02/2021','Bolo de cenoura',1244);
+insert into Post values(401, '19/02/2021','Chinelo',1245);
 COMMIT;

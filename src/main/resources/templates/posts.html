@@ -8,9 +8,9 @@
 
 <ul>
     <li th:each="post : ${posts}">
-        <span th:text="${post.date}">Default</span>
-        <span th:text="${post.user.name}">Default</span>
         <span th:text="${post.details}">Default</span>
+        <a th:href="@{/posts/{id}(id = ${post.id}) }">Visualizar</a>
+
     </li>
 </ul>
 

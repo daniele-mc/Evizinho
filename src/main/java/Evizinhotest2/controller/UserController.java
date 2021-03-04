@@ -30,11 +30,6 @@ public class UserController {
 	 	return userService.getUser(id);
 	 }
 
-	 @RequestMapping(value = "/users", method = RequestMethod.POST)
-	 public void addUser(@RequestBody User user) {
-		 userService.addUser(user);
-	 }
-	 
 	 @RequestMapping(value = "/users/{id}", method = RequestMethod.PUT)
 	 public void updateUser(@RequestBody User user,@PathVariable Integer id ) {
 		 userService.updateUser(id, user);
@@ -45,16 +40,27 @@ public class UserController {
 		 userService.deleteUser(id);
 		 	 
 	 }
-	 
-	 
-	 
-		@GetMapping("/users/{id}")
-		public String show(Model model, @PathVariable("id") Integer id) {
-			if (id != null) {
-				User user = userService.getUser(id).get();
-				model.addAttribute("user", user);
-			}
-			return "showUser";
-		}
+
+	 @GetMapping("/users/{id}")
+	 public String show(Model model, @PathVariable("id") Integer id) {
+	 	if (id != null) {
+	 		User user = userService.getUser(id).get();
+	 		model.addAttribute("user", user);
+	 	}
+	 	return "showUser";
+	 }
+
+	@RequestMapping(value = "/users/form", method=RequestMethod.GET)
+	public String register(Model model) {
+	 	User user = new User();
+	 	model.addAttribute("user", user);
+		return "register";
+	}
+
+	@RequestMapping(value = "/users/register", method=RequestMethod.POST)
+	public String register(User user) {
+		userService.addUser(user);
+		return "home";
+	}
 
 }
