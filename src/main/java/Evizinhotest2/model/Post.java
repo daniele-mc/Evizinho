@@ -21,6 +21,9 @@ public class Post {
 	private User user;
 	
 	@Column
+	private String title;
+	
+	@Column
 	private String details;
 	
 	public Integer getId() {
@@ -40,6 +43,9 @@ public class Post {
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}
+	public String getTitle() {
+		return title;
 	}
 	public String getDetails() {
 		return details;
