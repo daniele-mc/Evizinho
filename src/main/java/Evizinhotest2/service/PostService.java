@@ -6,11 +6,13 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import Evizinhotest2.model.Post;
 import Evizinhotest2.repository.PostRepository;
 
 @Service
+@Transactional(readOnly = true)
 public class PostService {
 	@Autowired
 	public PostRepository postRepository;
@@ -25,6 +27,7 @@ public class PostService {
 	    return posts;		
 	}
 	
+	@Transactional(readOnly = false)
 	public void addPost(Post post) {
 	     postRepository.save(post);
 	}
@@ -33,10 +36,12 @@ public class PostService {
 	     return postRepository.findById(id);
 	}
 	
+	@Transactional(readOnly = false)
 	public void updatePost(Integer id, Post post) {
 	     postRepository.save(post);
 	}
 	
+	@Transactional(readOnly = false)
 	public void deletePost(Integer id) {
 	     postRepository.deleteById(id);
 	}

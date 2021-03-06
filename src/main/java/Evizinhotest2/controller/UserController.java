@@ -17,13 +17,18 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	 @RequestMapping(value = "/users")
-	  public List<User> getAllUsers(Model model) 
-	  {		
-		 List<User> users = userService.getAllUsers();
-		 model.addAttribute("users", users);
-		 return users;
-	  }	
+	private static final String MSG_SUCESS_ADD = "Post Adicionado com Sucesso!";
+	private static final String MSG_SUCESS_UPDATE = "Post Atualizado com Sucesso!";
+	private static final String MSG_SUCESS_DELETE = "Excluído com sucesso!.";
+	private static final String MSG_ERROR = "Error.";
+	
+	@RequestMapping(value = "/users")
+	public List<User> getAllUsers(Model model) 
+	{		
+		List<User> users = userService.getAllUsers();
+		model.addAttribute("users", users);
+		return users;
+	}	
 
 	 @RequestMapping(value = "/users/{id}")
 	 public Optional<User> getUser(@PathVariable Integer id) {

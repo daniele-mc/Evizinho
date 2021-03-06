@@ -29,7 +29,12 @@
         <label for="user">Usuário: </label>
         <span th:text="${post.user.name}"></span>
     </div>
-
+    <div>
+    	<form th:action="@{${post.id +'/delete'}}" th:object="${post}" method="post">
+                        <input type="hidden" th:field="${post}">Delete</input>
+                        <button type="submit" onClick="return confirm('sure?')"/>
+        </form>
+	</div>
 </div>
 </body>
 </html>

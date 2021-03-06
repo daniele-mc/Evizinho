@@ -39,8 +39,9 @@ public class UserService {
 	}
 	
 	@Transactional(readOnly = false)
-	public void updateUser(Integer id, User user) {
+	public User updateUser(Integer id, User user) {
 	     userRepository.save(user);
+	     return user;
 	}
 	
 	@Transactional(readOnly = false)
