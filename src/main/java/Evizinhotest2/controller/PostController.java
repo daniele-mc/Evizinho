@@ -3,6 +3,7 @@ package Evizinhotest2.controller;
 import java.util.List;
 import java.util.Optional;
 
+import Evizinhotest2.model.User;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,7 +38,7 @@ public class PostController {
 	 	return postService.getPost(id);
 	 }
 	 
-	 
+	 /**
 	 @RequestMapping(value = "/posts", method = RequestMethod.POST)
 	 public void addPost(@RequestBody Post post, RedirectAttributes redirectAttributes) {
 	 	try {
@@ -52,10 +53,32 @@ public class PostController {
 			e.printStackTrace();
 			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
 		}
+	 }*/
+	 @RequestMapping(value = "/posts/form", method=RequestMethod.GET)
+	 public String addPost(Model model) {
+	 	Post post = new Post();
+	 	model.addAttribute("post", post);
+	 	return "addPost";
 	 }
+
+	@RequestMapping(value = "/posts/register", method=RequestMethod.POST)
+	public String addPost(Post post, RedirectAttributes redirectAttributes) {
+		try {
+			postService.addPost(post);
+			redirectAttributes.addFlashAttribute("success", MSG_SUCESS_ADD);
+		} catch (Exception e) {
+			System.out.println("Exception:: exception");
+			e.printStackTrace();
+			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
+		}catch (Throwable e) {
+			System.out.println("Throwable:: exception");
+			e.printStackTrace();
+			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
+		}
+		return "redirect:/posts/";
+	}
 	 
-	 
- 
+
 	 @RequestMapping(value = "/posts/{id}", method = RequestMethod.PUT)
 	 public void updatePost(@RequestBody Post post,@PathVariable Integer id, RedirectAttributes redirectAttributes) {
 		try {
