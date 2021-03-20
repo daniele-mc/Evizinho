@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar post</title>
+</head>
+<body>
+<div class="limiter">
+    <div class="container">
+        <form th:action="@{/posts/register}" action="#" th:object="${post}" method="post">
+            <h1>Cadastrar post</h1>
+            <p>
+                <input th:field="*{title}" id="title" name="title" placeholder="Titulo" type="text" />
+            </p>
+            <p>
+                <input th:field="*{details}" id="details" name="details" placeholder="Detalhes" type="text" />
+            </p>
+            <p>
+                <input th:field="*{date}" id="date" name="date" placeholder="Data" type="text" />
+            </p>
+            <p>
+                <input th:field="*{user.id}" id="user" name="user" placeholder="Usuario" type="number" />
+            </p>
+            <p>
+                <button class="save" type="submit">Salvar</button>
+            </p>
+            <p>
+                <a class="home" href="/home">Voltar</a>
+            </p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
