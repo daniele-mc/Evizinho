@@ -76,6 +76,7 @@ public class UserController {
 	public String register(User user, RedirectAttributes redirectAttributes) {
 		try {
 			userService.addUser(user);
+			redirectAttributes.addFlashAttribute("success", MSG_SUCESS_ADD);
 		}catch (Exception e) {
 			System.out.println("Exception:: exception");
 			e.printStackTrace();
