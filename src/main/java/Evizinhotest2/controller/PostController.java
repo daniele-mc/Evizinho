@@ -38,13 +38,13 @@ public class PostController {
 	 	return postService.getPost(id);
 	 }
 	 
-	 /**
-	 @RequestMapping(value = "/posts", method = RequestMethod.POST)
-	 public void addPost(@RequestBody Post post, RedirectAttributes redirectAttributes) {
-	 	try {
-			postService.addPost(post);
-			redirectAttributes.addFlashAttribute("success", MSG_SUCESS_ADD);
-		} catch (Exception e) {
+	 @RequestMapping(value = "/posts/form", method=RequestMethod.GET)
+	 public String addPost(Model model, RedirectAttributes redirectAttributes) {
+		try {
+			Post post = new Post();
+			model.addAttribute("post", post);
+		}
+		catch (Exception e) {
 			System.out.println("Exception:: exception");
 			e.printStackTrace();
 			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
@@ -53,11 +53,6 @@ public class PostController {
 			e.printStackTrace();
 			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
 		}
-	 }*/
-	 @RequestMapping(value = "/posts/form", method=RequestMethod.GET)
-	 public String addPost(Model model) {
-	 	Post post = new Post();
-	 	model.addAttribute("post", post);
 	 	return "addPost";
 	 }
 
