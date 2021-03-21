@@ -6,9 +6,15 @@
 </head>
 <body>
 
+<div align="center"> 
+<a href="/users">Users</a>
+<a href="/posts">Posts</a>
+<a href="/posts/form">Cadastrar post</a>
+</div>
+
 <ul>
     <li th:each="user : ${users}">
-        <span th:text="${user.name}" >Default</span><a th:href="@{/users/{id}(id = ${user.id}) }">Visualizar</a>
+        <span th:text="${user.username}" >Default</span><a th:href="@{/users/{id}(id = ${user.id}) }">Visualizar</a>
     </li>
 </ul>
 

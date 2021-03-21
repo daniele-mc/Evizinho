@@ -5,6 +5,13 @@
     <title>Cadastrar post</title>
 </head>
 <body>
+
+<div align="center"> 
+	<a href="/users">Users</a>
+	<a href="/posts">Posts</a>
+	<a href="/posts/form">Cadastrar post</a>
+</div>
+
 <div class="limiter">
     <div class="container">
         <form th:action="@{/posts/register}" action="#" th:object="${post}" method="post">

@@ -10,12 +10,19 @@
 		<title>Perfil de usuário</title>
 	</head>
 	<body>
+
+		<div align="center"> 
+		<a href="/users">Users</a>
+		<a href="/posts">Posts</a>
+		<a href="/posts/form">Cadastrar post</a>
+		</div>
+		
 		<div layout:fragment="content">
 			<h1>Perfil de Usuário</h1>
 			<hr />
 			<div class="form-group"> 
-				<label for="name">Name: </label>  
-				<span th:text="${user.name}"></span> 
+				<label for="username">Name: </label>  
+				<span th:text="${user.username}"></span> 
 			</div> 
 			<div class="form-group"> 
 				<label for="email">Email: </label>  

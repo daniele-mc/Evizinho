@@ -27,7 +27,7 @@
     </div>
     <div class="form-group">
         <label for="user">Usuário: </label>
-        <span th:text="${post.user.name}"></span>
+        <span th:text="${post.user.username}"></span>
     </div>
     <div>
     	<form th:action="@{${post.id +'/delete'}}" th:object="${post}" method="post">

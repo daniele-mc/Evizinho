@@ -6,6 +6,12 @@
 </head>
 <body>
 
+<div align="center"> 
+	<a href="/users">Users</a>
+	<a href="/posts">Posts</a>
+	<a href="/posts/form">Cadastrar post</a>
+</div>
+
 <ul>
     <li th:each="post : ${posts}">
         <span th:text="${post.title}">Default</span>
