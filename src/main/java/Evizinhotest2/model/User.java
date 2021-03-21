@@ -30,7 +30,7 @@ public class User implements UserDetails{
 	@Column(nullable = false)
 	private String apartment;
 
-	@Column(nullable = false)
+	@Column
 	private String phone;
 
 	public Integer getId() {
