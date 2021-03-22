@@ -5,4 +5,5 @@ COMMIT;
 
 insert into Post values(400, '18/02/2021', 'Bolo de cenoura com cobertura de chocolate por R$30,00 entrego em casa.', 'Bolo de cenoura', 1244);
 insert into Post values(401, '19/02/2021','chinelo réi torado tamanho 38, interessados entrar em contato.','Chinelo',1245);
+
 COMMIT;

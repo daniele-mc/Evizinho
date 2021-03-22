@@ -25,6 +25,7 @@ public class Post {
 	
 	@Column
 	private String details;
+
 	
 	public Integer getId() {
 		return id;
@@ -56,7 +57,7 @@ public class Post {
 	public void setDetails(String details) {
 		this.details = details;
 	}
-	
+
 	public Post() {
 		//empty
 	}

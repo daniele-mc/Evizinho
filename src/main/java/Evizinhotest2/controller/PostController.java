@@ -30,8 +30,7 @@ public class PostController {
 		 List<Post> posts = postService.getAllPosts();
 		 model.addAttribute("posts", posts);
 		 return posts;
-	  }	
-	 
+	  }
 	 
 	 @RequestMapping(value = "/posts/{id}")
 	 public Optional<Post> getPost(@PathVariable Integer id) {

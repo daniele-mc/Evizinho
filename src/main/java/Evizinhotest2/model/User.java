@@ -2,11 +2,7 @@ package Evizinhotest2.model;
 
 import java.util.Collection;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -32,6 +28,11 @@ public class User implements UserDetails{
 
 	@Column
 	private String phone;
+
+	//@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "favorite_id")
+	private Favorite favorite;
 
 	public Integer getId() {
 		return id;
@@ -75,6 +76,14 @@ public class User implements UserDetails{
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Favorite getFavorite() {
+		return favorite;
+	}
+
+	public void setFavorite(Favorite favorite) {
+		this.favorite = favorite;
 	}
 
 	public User() {
